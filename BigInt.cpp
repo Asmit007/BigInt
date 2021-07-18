@@ -383,6 +383,16 @@ private:
         return Ans;
     }
 
+    string fact(string str)
+    {
+        if (str == "0" || str == "1")
+            return "1";
+
+        string two = SUBTRACT(str, "1");
+
+        return MULTIPLY(str, fact(two));
+    }
+
 public:
     friend istream &operator>>(istream &in, BigInt &obj);
     friend ostream &operator<<(ostream &out, const BigInt &obj);
@@ -558,6 +568,14 @@ public:
         return SUB;
     }
 
+    BigInt fact()
+    {
+        BigInt str;
+        str.x = fact(x);
+
+        return str;
+    }
+
     // >
 
     bool operator>(BigInt &obj)
@@ -636,6 +654,9 @@ ostream &operator<<(ostream &out, const BigInt &obj)
 
 int main()
 {
-
+    cout << "is it working?" << endl;
+    BigInt x;
+    cin >> x;
+    cout << x.fact() << endl;
     return 0;
 }
