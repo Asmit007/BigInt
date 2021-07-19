@@ -426,9 +426,6 @@ public:
         string num2 = obj.x;
 
         MUL.x = MULTIPLY(num1, num2);
-
-        cout << " MULx  = " << MUL.x << endl;
-
         return MUL;
     }
 
@@ -441,9 +438,6 @@ public:
         string num2 = obj.x;
 
         SUB.x = SUBTRACT(num1, num2);
-
-        cout << " SUBx  = " << SUB.x << endl;
-
         return SUB;
     }
 
@@ -650,13 +644,4 @@ ostream &operator<<(ostream &out, const BigInt &obj)
 {
     out << obj.x;
     return out;
-}
-
-int main()
-{
-    cout << "is it working?" << endl;
-    BigInt x;
-    cin >> x;
-    cout << x.fact() << endl;
-    return 0;
 }
